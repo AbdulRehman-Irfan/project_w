@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0;
 }
+body{
+  margin: 0;
+}
 .container{
   margin: 0;
 }
@@ -55,12 +58,14 @@ button a{
 .seventh {
   background-color: rgb(19, 19, 19);
   color: rgb(228, 228, 228);
-  max-width: 100%;
-  min-height: 40vh;
+  max-width:100%;
+  min-height: 35vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   font-family: sans-serif;
+  margin:0;
+  
 }
 .about {
   width: 20%;
@@ -92,7 +97,7 @@ button a{
   color: rgb(177, 177, 177);
   line-height: 150%;
 }
-.bank-icons {
+ .bank-icons {
   display: flex;
   justify-content: center;
   gap: 0.5rem;
@@ -122,3 +127,124 @@ button a{
   color: white;
   font-size: medium;
 }
+/*
+.contact-page{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  width: 100%;
+  height: 100vh;
+}
+.contact-page header{
+  position: absolute;
+  text-align:center;
+  width: 75%;
+  left: 12%;
+  top:2rem
+
+}
+.contact-page header h1{
+  font-size: 30px;
+}
+.empty{
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.content{
+  display: flex;
+  min-height: 110vh;
+}
+.content section{
+  margin-top: 8vh;
+  margin-left: 20vh;
+}
+.content-form{
+  margin-top: 7rem;
+}
+section i{
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255,255,255,0.8);
+  color: #000;
+  text-align: center;
+
+} 
+.form{
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left:50%;
+  justify-content: center;
+  align-items: center;
+  min-height: 110vh;
+
+}
+.form .contact-form input{
+  width:30rem;
+  background-color: transparent;
+  border: 0px;
+  border: transparent;
+  margin: 20px;
+  padding: 20px;
+  font-size: 18px;
+  border-bottom: 2px solid #fff;
+
+}
+.form .contact-form input ~ span{
+  position: absolute;
+  left: 20px;
+  transition: 0.9s ease-in-out;
+  margin-top: 10px;
+}
+.form .contact-form input:focus ~ span{
+  transform: translateY(-20px);
+  pointer-events:none;
+
+}
+.form .contact-from textarea{
+  width:30rem;
+  border: 0;
+  background-color: transparent ;
+  margin: 20px;
+  font-size:17px;
+  border-bottom: 2px solid #fff;
+
+}
+.form .contact-from textarea ~ span{
+  position: absolute;
+  left: 20px;
+  margin-top: 10px;
+  transition: 0.9s ease-in-out;
+}
+.form .contact-from textarea:focus ~ span{
+  transform: translateY(-20px);
+  pointer-events:none;
+}
+.form .contact-from input[type=submit]{
+  background-color: dodgerblue;
+  border: 2px solid dodgerblue;
+  font-size:18px;
+  width: 50%;
+  height: 40px;
+  margin-top: -5px;
+}
+.form .contact-from input[type=submit]:hover{
+  background-color: transparent;
+  color: dodgerblue
+}
+.media{
+  position: absolute;
+  top:80vh;
+  right:20vh;
+  display: flex;
+  list-style: none;
+}
+.media li{
+  margin:20px 30px
+}
+ */

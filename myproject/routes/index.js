@@ -5,5 +5,11 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.render('components/homepage', { title: 'Express' });
 });
+router.get("/contact", function (req, res, next) {
+  return res.render("components/contact");
+});
+router.get("/api/mobiles", function (req, res, next) {
+  return res.render("components/shop" , );
+});
 
 module.exports = router;
