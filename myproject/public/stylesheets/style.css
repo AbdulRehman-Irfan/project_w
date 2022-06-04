@@ -127,6 +127,14 @@ button a{
   color: white;
   font-size: medium;
 }
+input[type=number]{
+  width:2.5rem
+}
+.buy-button{
+  border-radius: 0%;
+  display: block;
+  margin: 1rem 0rem;
+}
 /*
 .contact-page{
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

@@ -1,8 +1,7 @@
 <h3 class="mt-3 text-center">All Mobiles</h3>
-<div id="products" class="d-flex flex-row justify-content-center p-3 flex-wrap">
+<div id="mobiles" class="d-flex flex-row justify-content-center p-3 flex-wrap">
     <% for (let mobile of mobiles) { %>
         <div class="product card w-25 m-3">
-            <a href="">
                 <img class="card-img-top" src="../images/BACKGROUND.jpg" alt="">
                 <div class="card-body">
                     <h5 class="card-title">
@@ -20,12 +19,13 @@
                     <p class="card-text font-weight-bold"><b>ROM:</b>
                         <%=mobile.ROM%>
                     </p>
-                </div>
-            </a>
-            < class="card-body"> <
-            <button type="button" class="btn btn-warning px-4">ADD TO CART</button>
-        </div>
-</div>
-<% } %>
 
-    </div>
+                   <a href="/mobiles/<%=mobile.id%>" class="btn btn-primary">View</a>
+                    <button type="button" class="btn btn-warning px-4">ADD TO CART</button>
+                   
+                        
+                </div>
+            </div>
+                <% } %>
+
+        </div>

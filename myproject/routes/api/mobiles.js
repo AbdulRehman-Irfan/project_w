@@ -17,7 +17,7 @@ router.get('/:id', async (req, res) => {
         if(!mobile){
             return res.status(404).send("Mobile not found");
         }
-        return res.send(mobile)
+        return res.render('components/single', {mobile: mobile});
     }catch(err){
         return res.status(400).send("Invalid ID")
     }
