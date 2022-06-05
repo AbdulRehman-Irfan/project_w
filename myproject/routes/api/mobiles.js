@@ -66,4 +66,20 @@ router.post("/",validateMob ,async (req, res) => {
     return res.send(mobile)
 });
 
+
+  router.get("/add-to-cart/:id", async function (req, res, next) {
+    let mobile = await Mobile.findById(req.params.id);
+    let cart = [];
+    if (req.cookies.cart) cart = req.cookies.cart;
+    cart.push(mobile);
+    res.cookie("cart", cart);
+    return res.redirect("/mobiles");
+  });
+router.get("/cart/remove/:id", async function (req, res, next) {
+    let cart = req.cookies.cart;
+    let index = cart.indexOf(req.params.id);
+    cart.splice(index, 1);
+    res.cookie("cart", cart);
+    return res.redirect("/cart");
+    });
 module.exports = router;

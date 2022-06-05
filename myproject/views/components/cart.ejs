@@ -1,0 +1,40 @@
+<h4 class=" mt-3 text-center">Shopping Cart</h4>
+<div class="small-container cart-page">
+    <table>
+        <tr>
+            <th>Mobile</th>
+            <th >Quantity</th>
+            <th >Subtotal</th>
+        </tr>
+        <% for (let mobile of mobiles) { %>
+            <tr>
+                <td>
+                    <div class="cart-info">
+                        <img src="../images/im.jpg" alt="">
+                        <div class="cart-info-text">
+                            <h5>
+                                <%=mobile.name%>
+                            </h5>
+                            <p class="m-0">
+                                <b>Price:</b>
+                                <%=mobile.price%>
+                            </p>
+                            <a href="/mobiles/cart/remove/<%=mobile.id%>">Remove</a>
+                        </div>
+                </td>
+                <td><input type="number" value="1"></td>
+                <td>122000</td>
+            </tr>
+            <% } %>
+    </table>
+    <% if(mobiles.length > 0) { %>
+    <div class="total-price">
+        <table>
+            <tr>
+                <td><b>Total:</b></td>
+                <td><%=total%></td>
+            </tr>
+        </table>
+    </div>
+    <% } %>
+</div>
