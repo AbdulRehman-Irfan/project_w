@@ -1,3 +1,4 @@
 {
-    "db":"mongodb://localhost/mobile_db"
+    "db":"mongodb://localhost/mobile_db",
+    "jwt_secret":"secret"
 }

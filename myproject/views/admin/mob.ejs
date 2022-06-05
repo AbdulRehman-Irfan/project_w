@@ -1,0 +1,37 @@
+<h3 class="pt-3 text-center">All Mobiles</h3>
+<div class="d-flex justify-content-center mt-3">
+    <a href="/admin/mobiles/add"><button type="button" class="btn btn-primary px-3">ADD PRODUCT</button></a>
+</div>
+<div id="mobiles" class="d-flex flex-row justify-content-center p-3 flex-wrap">
+
+    <% for (let mobile of mobiles) { %>
+        <div class="product card w-25 m-3">
+            <img class="card-img-top" src="../images/BACKGROUND.jpg" alt="">
+            <div class="card-body">
+                <h5 class="card-title">
+                    <%=mobile.name%>
+                </h5>
+                <p class="card-text">
+                    <%=mobile.description%>
+                </p>
+                <p class="card-text font-weight-bold"><b>Price:</b>
+                    <%=mobile.price%>
+                </p>
+                <p class="card-text font-weight-bold"><b>RAM:</b>
+                    <%=mobile.RAM%>
+                </p>
+                <p class="card-text font-weight-bold"><b>ROM:</b>
+                    <%=mobile.ROM%>
+                </p>
+
+                <a href="/admin/mobiles/update/<%=mobile.id%>"><button type="button"
+                        class="btn btn-warning px-4">Update</button></a>
+                <a href="/admin/mobiles/delete/<%=mobile.id%>"><button type="button"
+                        class="btn btn-danger px-3">Delete</button></a>
+
+
+            </div>
+        </div>
+        <% } %>
+
+</div>
