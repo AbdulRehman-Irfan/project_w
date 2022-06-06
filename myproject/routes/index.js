@@ -31,16 +31,16 @@ router.get("/cart", async function (req, res, next) {
   res.render("components/cart", { mobiles, total });
 });
 router.get("/login", function (req, res, next) {
-  return res.render("components/login");
+  return res.render("components/login", { error: ""});
 });
 router.post("/login", async function (req, res, next) {
   let user = await User.findOne({ email: req.body.email });
   if (!user) 
-  return res.render("components/login");
+  return res.render("components/login",{error:"User Not Exist"});
 
   let isValid = await bcrypt.compare(req.body.password, user.password);
   if (!isValid)
-   return res.render("components/login");
+   return res.render("components/login",{error:"Invalid Password"});
 
   let token = jwt.sign({ _id: user._id,name: user.name , email: user.email},config.get("jwt_secret"));
   
@@ -71,7 +71,7 @@ router.post("/register", async function (req, res, next) {
   user.password = await bcrypt.hash(user.password, salt);
 
   await user.save();
-  return res.redirect("/login");
+  return res.redirect("/login",{error:""});
 });
 
 module.exports = router;

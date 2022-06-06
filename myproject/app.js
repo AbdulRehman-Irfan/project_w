@@ -40,7 +40,7 @@ app.use(
 app.use('/',sessionAuth, indexRouter);
 app.use('/users', usersRouter);
 app.use('/mobiles', mobilesRouter);
-app.use('/admin', adminRouter);
+app.use('/admin',adminAuth,adminRouter);
 app.use(sessionAuth)
 
 // catch 404 and forward to error handler
