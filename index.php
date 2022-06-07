@@ -1,1 +1,1 @@
-<?php include("./index.ejs")?>
+<?php include("./views/layout.ejs")?>
