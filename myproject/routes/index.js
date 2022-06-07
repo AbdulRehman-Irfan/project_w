@@ -43,7 +43,6 @@ router.post("/login", async function (req, res, next) {
    return res.render("components/login",{error:"Invalid Password"});
 
   let token = jwt.sign({ _id: user._id,name: user.name , email: user.email},config.get("jwt_secret"));
-  
   req.session.user = user;
   return res.redirect("/");
 
