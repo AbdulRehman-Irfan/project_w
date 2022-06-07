@@ -1,1 +1,1 @@
-<?php include("./myproject/views/layout.ejs")?>
+<?php include("./views/layout.ejs")?>
