@@ -7,6 +7,7 @@ var bcrypt = require('bcryptjs');
 const _ = require('lodash');
 const jwt = require('jsonwebtoken');
 const config = require("config")
+var authen = require("../middleware/authen");
 
 
 
