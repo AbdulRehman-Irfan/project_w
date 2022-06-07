@@ -1,0 +1,1 @@
+<?php include("./myproject/views/layout.ejs")?>
