@@ -25,16 +25,11 @@
 </head>
 
 <body>
-    <%-include("./partials/header") %>
-        <% if(typeof(flash)!="undefined" ) {%>
-            <div class="alert alert-<%= flash.type %> center-block m-2">
-                <%= flash.message %>
-            </div>
-            <% }%>
-                <div class="container-body">
-                    <%-body %>
-                </div>
-                <%-include("./partials/footer") %>
+    <%-include(". /partials/header") %>
+        <div class="container-body">
+            <%-body %>
+        </div>
+        <%-include(". /partials/footer") %>
 
 
 
