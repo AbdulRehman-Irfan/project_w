@@ -7,6 +7,18 @@ var bcrypt = require('bcryptjs');
 const _ = require('lodash');
 const jwt = require('jsonwebtoken');
 const config = require("config")
+const multer = require("multer");
+const path = require("path");
+const storage = multer.diskStorage({
+    destination: (req, file, callBack) => {
+      callBack(null, "public/images/uploades");
+    },
+    filename: (req, file, callBack) => {
+        let ext = path.extname(file.originalname);
+        callBack(null, Date.now() + ext);
+    },
+  });
+  let upload = multer({ storage });
 
 router.get('/', function(req, res, next) {
     res.render('admin/main');
@@ -30,13 +42,14 @@ router.get('/mobiles/delete/:id', async (req, res) => {
     }
 });
 
-router.get("/mobiles/add" ,async (req, res) => {
+router.get("/mobiles/add" ,upload.single("image"),async (req, res) => {
    return res.render("admin/add")
 });
 router.get("/mobiles/update" ,async (req, res) => {
     return res.render("admin/update")
  });
-router.post("/mobiles" ,async (req, res) => {
+router.post("/mobiles" ,upload.single("image"),async (req, res) => {
+    console.log("kooo",req.file);
 
     let mobile = new Mobile();
     mobile.name = req.body.name;
@@ -44,10 +57,13 @@ router.post("/mobiles" ,async (req, res) => {
     mobile.description = req.body.description;
     mobile.RAM = req.body.RAM;
     mobile.ROM = req.body.ROM;
+    if(req.file){
+        mobile.image = req.file.filename;
+    }
     await mobile.save();
     return res.redirect("/admin/mobiles");
 });
-router.put('/:id', async (req, res) => {
+router.put('/:id',upload.single("image"), async (req, res) => {
     try{
         let mobile = await Mobile.findByIdAndUpdate(req.params.id);
        
@@ -59,6 +75,9 @@ router.put('/:id', async (req, res) => {
         mobile.description = req.body.description;
         mobile.RAM = req.body.RAM;
         mobile.ROM = req.body.ROM;
+        if(req.file){
+            mobile.image = req.file.filename;
+        }
         await mobile.save();
         return res.send(mobile)
     }catch(err){

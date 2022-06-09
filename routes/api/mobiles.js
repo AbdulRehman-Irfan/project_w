@@ -62,6 +62,7 @@ router.post("/",validateMob ,async (req, res) => {
     mobile.description = req.body.description;
     mobile.RAM = req.body.RAM;
     mobile.ROM = req.body.ROM;
+    mobile.image = req.file.filename;
     await mobile.save();
     return res.send(mobile)
 });

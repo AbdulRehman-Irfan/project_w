@@ -13,8 +13,9 @@ var authen = require("../middleware/authen");
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('components/homepage', { title: 'Express' });
+router.get('/', async function(req, res, next) {
+  let mobiles = await Mobile.find();
+  res.render('components/homepage', { mobiles:mobiles});
 });
 router.get("/contact", function (req, res, next) {
   return res.render("components/contact");

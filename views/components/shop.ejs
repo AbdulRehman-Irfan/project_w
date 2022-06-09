@@ -1,31 +1,33 @@
 <h3 class="pt-3 text-center">All Mobiles</h3>
-<div id="mobiles" class="d-flex flex-row justify-content-center p-3 flex-wrap">
+<div id="mobiles" class="row justify-content-center gap-3">
     <% for (let mobile of mobiles) { %>
-        <div class="product card w-25 m-3">
-                <img class="card-img-top" src="../images/BACKGROUND.jpg" alt="">
-                <div class="card-body">
-                    <h5 class="card-title">
-                        <%=mobile.name%>
-                    </h5>
-                    <p class="card-text">
-                        <%=mobile.description%>
-                    </p>
-                    <p class="card-text font-weight-bold"><b>Price:</b>
-                        <%=mobile.price%>
-                    </p>
-                    <p class="card-text font-weight-bold"><b>RAM:</b>
-                        <%=mobile.RAM%>
-                    </p>
-                    <p class="card-text font-weight-bold"><b>ROM:</b>
-                        <%=mobile.ROM%>
-                    </p>
+        <div class="card col-lg-3 col-md-5 col-sm-2 mb-2">
+            <img class="card-img-top" src="/images/uploades/<%=mobile.image %>" alt="/images/2g.jpg"
+                 />
+            <div class="card-body">
 
-                   <a href="/mobiles/<%=mobile.id%>" class="btn btn-primary">View</a>
-                    <a href="/mobiles/add-to-cart/<%=mobile.id%>" class="btn btn-warning">Add to Cart</a>
-                   
-                        
-                </div>
+                <h5 class="card-title">
+                    <%=mobile.name%>
+                </h5>
+                <p class="card-text">
+                    <%=mobile.description%>
+                </p>
+                <p class="card-text font-weight-bold"><b>Price:</b>
+                    <%=mobile.price%>
+                </p>
+                <p class="card-text font-weight-bold"><b>RAM:</b>
+                    <%=mobile.RAM%>
+                </p>
+                <p class="card-text font-weight-bold"><b>ROM:</b>
+                    <%=mobile.ROM%>
+                </p>
+
+                <a href="/mobiles/<%=mobile.id%>" class="btn btn-primary">View</a>
+                <a href="/mobiles/add-to-cart/<%=mobile.id%>" class="btn btn-warning">Add to Cart</a>
+
+
             </div>
-                <% } %>
-
         </div>
+        <% } %>
+
+</div>

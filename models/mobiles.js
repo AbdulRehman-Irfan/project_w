@@ -6,6 +6,7 @@ var mobSchema =  mongoose.Schema({
     description: String,
     RAM: String,
     ROM: String,
+    image: String,
 });
 
 var Mob = mongoose.model('Mob', mobSchema);
@@ -16,7 +17,8 @@ function validateProduct(data){
         price: joi.number().min(0).required(),
         description: joi.string().min(2).required(),
         RAM: joi.string().required(),
-        ROM: joi.string().required()
+        ROM: joi.string().required(),
+        image: joi.string().required()
     });
     return schema.validate(data,{abortEarly: false});
 
