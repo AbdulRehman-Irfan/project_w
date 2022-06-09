@@ -71,7 +71,7 @@ router.post("/register", async function (req, res, next) {
   user.password = await bcrypt.hash(user.password, salt);
 
   await user.save();
-  return res.redirect("/login",{error:""});
+  return res.redirect("/login");
 });
 
 module.exports = router;
