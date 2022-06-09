@@ -1,4 +1,4 @@
 {
-    "db":"mongodb://localhost/mobile_db",
-    "jwt_secret":"secret"
+  "db": "mongodb+srv://abdul-sh:123@cluster0.9robre1.mongodb.net/?retryWrites=true&w=majority",
+  "jwt_secret": "secret"
 }
