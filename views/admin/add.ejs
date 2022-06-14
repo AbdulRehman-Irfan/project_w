@@ -28,8 +28,37 @@
                     <div class="form-group my-2">
                         <label for="image">Upload Mobile Image</label>
                         <br>
-                        <input type="file" class="form-control-file mt-2" id="image" name="image">
+                        <input type="file" class="form-control-file mt-2" id="image">
                     </div>
+                    <!-- <% const postDetails = (imgs) => {
+                                        if (!imgs) {
+                                                return ("No image");
+                                        }
+                    onchange=`{()=>{name = postDetails(e.target.files[0])}}`
+                                        return("No image");
+
+                                        if (img.type === "image/png" || imgs.type === "image/jpeg") {
+                                                const data = new FormData();
+                                                data.append("file", imgs);
+                                                data.append("upload_preset", "twoNote");
+                                                data.append("cloud_name", "mainiac");
+                                                fetch("https://api.cloudinary.com/v1_1/sheikh/image/upload", {
+                                                        method: "post",
+                                                        body: data,
+                                                })
+                                                        .then((res) => res.json())
+                                                        .then((data) => {
+                                                                console.log(data);
+                                                                setImg(data.url.toString());
+                                                        })
+                                                        .catch((err) => {
+                                                                console.log(err);
+                                                        });
+                                        } else {
+                                                return setImgMessage("Please upload an image");
+                                        }
+                                };
+                        %> -->
 
                     <div class="form-group mt-3 d-grid">
                         <button class="btn btn-success" type="submit">ADD</button>
