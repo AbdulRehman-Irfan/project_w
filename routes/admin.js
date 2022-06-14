@@ -48,7 +48,7 @@ router.get("/mobiles/add" ,upload.single("image"),async (req, res) => {
 router.get("/mobiles/update" ,async (req, res) => {
     return res.render("admin/update")
  });
-router.post("/mobiles" ,upload.single("image"),async (req, res) => {
+router.post("/mobiles" ,upload.single("image"),validateMob,async (req, res) => {
     console.log("kooo",req.file);
 
     let mobile = new Mobile();
@@ -60,7 +60,7 @@ router.post("/mobiles" ,upload.single("image"),async (req, res) => {
     if(req.file){
         mobile.image = req.file.filename;
     }
-    mobile.image = '/images/2g.jpg'
+ 
     await mobile.save();
     return res.redirect("/admin/mobiles");
 });

@@ -8,8 +8,6 @@ function sessionAuth(req,res,next){
             );
       
         }
-        
-
     next();
 }
 
